@@ -1,4 +1,4 @@
-package com.basakjeet08.mytodo
+package com.basakjeet08.mytodo.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,5 +11,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.btnSubmit.setOnClickListener{
+
+        }
+
+        binding.btnFetchTodos.setOnClickListener {
+
+        }
     }
 }
