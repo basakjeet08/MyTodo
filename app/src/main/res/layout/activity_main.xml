@@ -56,13 +56,6 @@
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="14sp" />
-
-        <Button
-            android:id="@+id/btnFetchTodos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fetch_todos" />
-
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

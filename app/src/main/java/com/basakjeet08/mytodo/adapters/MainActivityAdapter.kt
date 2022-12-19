@@ -27,7 +27,7 @@ class MainActivityAdapter(private val context : Context) : RecyclerView.Adapter<
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return todos?.size!!
     }
     fun updateList(newTodos : List<Todos>){
         todos = newTodos

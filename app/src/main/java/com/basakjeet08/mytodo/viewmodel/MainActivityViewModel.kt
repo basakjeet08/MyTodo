@@ -9,14 +9,13 @@ import com.basakjeet08.mytodo.repository.Repository
 import kotlinx.coroutines.launch
 
 class MainActivityViewModel(private val repository: Repository) : ViewModel() {
-    private val myTodosList : MutableLiveData<List<Todos>> = MutableLiveData()
-    val _myTodoList : LiveData<List<Todos>>
-        get() = myTodosList
-
+    private val _myTodosList : MutableLiveData<List<Todos>> = MutableLiveData()
+    val myTodoList : LiveData<List<Todos>>
+        get() = _myTodosList
     fun getTodos(){
         viewModelScope.launch {
             val todoList : List<Todos> = repository.getTodos()
-            myTodosList.value = todoList
+            _myTodosList.value = todoList
         }
     }
 
@@ -24,7 +23,7 @@ class MainActivityViewModel(private val repository: Repository) : ViewModel() {
         viewModelScope.launch {
             repository.insertTodo(todo)
             val todoList = repository.getTodos()
-            myTodosList.value = todoList
+            _myTodosList.value = todoList
         }
     }
 }
