@@ -25,13 +25,13 @@ abstract class TodoDatabase : RoomDatabase(){
 
         // Volatile Keyword basically means that if the value of the Instance changes then it inform the other classes
         @Volatile
-        private var databaseInstance : TodoDatabase? = null         // Database class Variable
+        private var INSTANCE : TodoDatabase? = null         // Database class Variable
 
         //This function returns the database class object to its caller accordingly
         fun getDatabase(context: Context): TodoDatabase {
 
             // If the database Instance is already created then it is not created again else it is created
-            if (databaseInstance == null) {
+            if (INSTANCE == null) {
 
                 // We use Synchronized to make sure that only one Operation is done at a time in the Database
                 synchronized(this) {
@@ -44,7 +44,7 @@ abstract class TodoDatabase : RoomDatabase(){
                      *  DAO implementations are done too.
                      *  Lastly it takes a name for the DataBase .
                      */
-                    databaseInstance = Room.databaseBuilder(
+                    INSTANCE = Room.databaseBuilder(
                         context,
                         TodoDatabase::class.java, "TodoDB"
                     )
@@ -52,7 +52,7 @@ abstract class TodoDatabase : RoomDatabase(){
                 }
             }
             //Returning the Database instance using which we can call the above todoDao method to implement the DAO
-            return databaseInstance!!
+            return INSTANCE!!
         }
     }
 }
