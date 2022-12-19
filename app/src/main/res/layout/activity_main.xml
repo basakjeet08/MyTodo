@@ -46,7 +46,7 @@
         <EditText
             android:id="@+id/etDescription"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="5"
             android:autofillHints="250 Rupees"
