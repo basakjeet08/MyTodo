@@ -3,4 +3,7 @@
     <string name="enter_the_title">Enter the Title</string>
     <string name="submit">Submit</string>
     <string name="fetch_todos">Fetch TODOs</string>
+    <string name="enter_the_description">Enter the Description</string>
+    <string name="title_s">Title : %s</string>
+    <string name="description_s">Description : %s</string>
 </resources>
